@@ -1,0 +1,56 @@
+Para crear y activar un ambiente virtual (venv) en mi proyecto y luego instalar allí todos los modulos y paquetes que necesito debo
+ejecutar las siguientes lineas de código: 
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+λ py -m venv venv   # Creo el ambiente virtual
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+λ touch .gitignore # Creo el archivo git ingore para indicar que cosas no quiero subir a mi repositorio
+
+# Luego en mi gitignore cargo entre otros la carpeta del ambiente virtual llamada venv/
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+λ ls -al
+total 109
+drwxr-xr-x 1 mgobea 1049089    0 nov. 12 10:47 ./
+drwxr-xr-x 1 mgobea 1049089    0 nov. 12 09:24 ../
+drwxr-xr-x 1 mgobea 1049089    0 nov. 11 15:52 .git/
+-rw-r--r-- 1 mgobea 1049089    0 nov. 12 10:47 .gitignore
+-rw-r--r-- 1 mgobea 1049089   87 nov. 11 15:52 README.md
+-rw-r--r-- 1 mgobea 1049089 1541 nov. 12 10:43 tipado_estatico.py
+drwxr-xr-x 1 mgobea 1049089    0 nov. 12 10:45 venv/
+
+# Verifico que ya tengo en mi carpeta del proyecto tanto el readme, el gitignore como mi carpeta venv/ con mi ambiente virtual
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+λ .\venv\Scripts\activate # Enciendo mi ambiente virtual
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+(venv) λ deactivate # Apago mi ambiente virtual
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+λ alias avenv=.\venv\Scripts\activate # Creo un alias para el encendido de mi ambiente virtual.
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+λ avenv # Enciendo mi ambiente virtual con el alias. 
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+(venv) λ deactivate # Vuelvo a apagar mi ambiente virtual 
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+(venv) λ pip install mypy
+Collecting mypy
+  Downloading https://files.pythonhosted.org/packages/15/e9/6b19c33819c27db7d69b938f062ea416398af62ae93aeb0fe47cb35d8a44/mypy-0.910-py3-none-any.whl (2.1MB)
+     |████████████████████████████████| 2.2MB 1.1MB/s
+Collecting mypy-extensions<0.5.0,>=0.4.3 (from mypy)
+  Downloading https://files.pythonhosted.org/packages/5c/eb/975c7c080f3223a5cdaff09612f3a5221e4ba534f7039db34c35d95fa6a5/mypy_extensions-0.4.3-py2.py3-none-any.whl
+Collecting toml (from mypy)
+  Using cached https://files.pythonhosted.org/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl
+Collecting typing-extensions>=3.7.4 (from mypy)
+  Downloading https://files.pythonhosted.org/packages/74/60/18783336cc7fcdd95dae91d73477830aa53f5d3181ae4fe20491d7fc3199/typing_extensions-3.10.0.2-py3-none-any.whl
+Installing collected packages: mypy-extensions, toml, typing-extensions, mypy
+Successfully installed mypy-0.910 mypy-extensions-0.4.3 toml-0.10.2 typing-extensions-3.10.0.2
+WARNING: You are using pip version 19.2.3, however version 21.3.1 is available. You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+# Instalo los paquetes que necesito para comenzar a trabajar. En este caso instalo mypy para poder trabajar con tipado estático. 
+

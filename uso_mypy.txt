@@ -1,0 +1,22 @@
+mypy se usa desde la consola con el siguiente comando:
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+(venv) λ py palindrome.py
+Traceback (most recent call last):
+  File "palindrome.py", line 9, in <module>
+    run()
+  File "palindrome.py", line 6, in run
+    print(is_palindrome(True))
+  File "palindrome.py", line 2, in is_palindrome
+    string = string.replace(" ","").lower() #Elimino los espacios vacios con el metodo replace y dejo todo en minuscula con el metodo lower
+AttributeError: 'bool' object has no attribute 'replace'
+
+# Este error nos lo arroja al correr el programa palindrome con tipos estaticos y un valor boolenano para comprobar. 
+
+C:\Users\mgobea\Desktop\Python_Profesional (main -> origin)
+(venv) λ mypy palindrome.py --check-untyped-defs
+palindrome.py:6: error: Argument 1 to "is_palindrome" has incompatible type "bool"; expected "str"
+Found 1 error in 1 file (checked 1 source file)
+
+# Esta aclaración nos arroja al hacer la comprobación de mi tipado mediante mypy
+
